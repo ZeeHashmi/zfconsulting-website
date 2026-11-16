@@ -1,6 +1,39 @@
 body {
-    background: #050505;
+    position: relative;
+    min-height: 100vh;
+    background:
+        linear-gradient(90deg, rgba(2, 9, 18, 0.86) 0%, rgba(7, 26, 45, 0.7) 30%, rgba(7, 26, 45, 0.42) 53%, rgba(7, 26, 45, 0.18) 100%),
+        url('assets/world-background.png') center center / cover no-repeat fixed;
     color: #ffffff;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 62% 32%, rgba(81, 196, 255, 0.20), transparent 22%),
+        radial-gradient(circle at 40% 75%, rgba(81, 196, 255, 0.08), transparent 18%),
+        radial-gradient(circle at 70% 55%, rgba(255, 176, 92, 0.08), transparent 16%);
+    filter: blur(16px);
+    animation: ambientGlow 12s ease-in-out infinite alternate;
+    z-index: -1;
+}
+
+@keyframes ambientGlow {
+    0% {
+        transform: scale(1) translate3d(0, 0, 0);
+        opacity: 0.75;
+    }
+    50% {
+        transform: scale(1.08) translate3d(-10px, 6px, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.12) translate3d(10px, -8px, 0);
+        opacity: 0.85;
+    }
 }
 
 h1, h2, h3 {
@@ -9,6 +42,12 @@ h1, h2, h3 {
 
 p {
     color: #cccccc;
+}
+
+.hero {
+    position: relative;
+    background: linear-gradient(90deg, rgba(5, 18, 32, 0.92) 0%, rgba(7, 26, 45, 0.78) 30%, rgba(7, 26, 45, 0.52) 52%, rgba(7, 26, 45, 0.12) 100%);
+    min-height: 640px;
 }
 
 .service {
@@ -26,7 +65,7 @@ p {
 }
 
 header {
-    background: #050505;
+    background: rgba(4, 10, 18, 0.8);
     color: #ffffff;
 }
 
