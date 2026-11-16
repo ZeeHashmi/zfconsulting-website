@@ -10,6 +10,7 @@
 *{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:#e8eee8;background:#0b0f0c;line-height:1.6}
 header{background:#080b09;color:white;padding:22px 8%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
 header h2{margin:0;letter-spacing:1px}header a{color:#78b8ff;text-decoration:none}
+.site-nav{display:flex;gap:20px;flex-wrap:wrap}
 .hero{background:linear-gradient(120deg,#0b1018,#183048);color:white;text-align:center;padding:100px 20px}
 .hero h1{font-size:clamp(34px,5vw,55px);margin-bottom:15px}.hero p{font-size:19px;max-width:700px;margin:auto}
 .button{display:inline-block;background:#246fbd;color:white;padding:13px 27px;border-radius:6px;margin-top:25px;text-decoration:none;font-weight:bold}
@@ -25,7 +26,7 @@ footer{background:#080b09;color:white;padding:25px;text-align:center}
 </style>
 </head>
 <body>
-<header><h2>ZF CONSULTING SERVICES</h2><a href="#contact">Contact Us</a></header>
+<header><h2>ZF CONSULTING SERVICES</h2><nav class="site-nav" aria-label="Main navigation"><a href="pc-check.html">Free PC Check</a><a href="#contact">Contact Us</a></nav></header>
 <div class="hero">
 <h1>Technology. Security. Automation.</h1>
 <p>Helping Australian businesses improve technology, strengthen cybersecurity and automate business processes.</p>
@@ -41,9 +42,10 @@ footer{background:#080b09;color:white;padding:25px;text-align:center}
 </div>
 </section>
 <section class="security-promo">
-<h2>Is your Windows PC properly protected?</h2>
-<p>Use our free PC Security Health Check to review selected Windows security settings and create a report on your own computer.</p>
-<a class="button" href="pc-security-check.html">Start Free PC Security Check</a>
+<h2>Free computer checks for everyone in Australia</h2>
+<p>Start with a quick browser-based check that works on computers, tablets and phones. Windows users can also review a separate local security report.</p>
+<a class="button" href="pc-check.html">Start the free browser check</a>
+<a class="button" href="pc-security-check.html">Windows security report</a>
 </section>
 <section class="about">
 <h2>About ZF Consulting Services</h2>

@@ -1,0 +1,282 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #0b1018;
+    color: #e8eef5;
+    font-family: Arial, sans-serif;
+    line-height: 1.65;
+}
+
+a {
+    color: #8bc7ff;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #f1c96b;
+    outline-offset: 3px;
+}
+
+.skip-link {
+    position: absolute;
+    top: -50px;
+    left: 16px;
+    z-index: 1;
+    padding: 8px 12px;
+    background: #fff;
+    color: #101820;
+}
+
+.skip-link:focus {
+    top: 12px;
+}
+
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 18px max(6%, calc((100% - 1120px) / 2));
+    background: #070b11;
+    border-bottom: 1px solid #26384b;
+}
+
+.brand {
+    color: #e8eef5;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.site-header nav {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.site-header nav a,
+.site-footer a {
+    color: #8bc7ff;
+}
+
+.page-main {
+    width: min(100% - 32px, 1040px);
+    margin: 0 auto;
+    padding: 36px 0 64px;
+}
+
+.hero {
+    padding: 48px 20px;
+    text-align: center;
+    background: linear-gradient(130deg, #101c2a, #173651);
+    border: 1px solid #2b4964;
+    border-radius: 16px;
+}
+
+.eyebrow {
+    margin: 0;
+    color: #8bc7ff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+h1 {
+    max-width: 760px;
+    margin: 14px auto;
+    color: #f4f8fc;
+    font-size: clamp(2.1rem, 6vw, 3.5rem);
+    line-height: 1.1;
+}
+
+.lead {
+    max-width: 740px;
+    margin: 0 auto;
+    color: #d0deeb;
+    font-size: 1.15rem;
+}
+
+.privacy-note {
+    max-width: 740px;
+    margin: 20px auto 0;
+    color: #c1d0df;
+}
+
+.primary-button {
+    margin-top: 20px;
+    padding: 13px 22px;
+    border: 0;
+    border-radius: 8px;
+    background: #267ac0;
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.primary-button:hover:not(:disabled) {
+    background: #348ed6;
+}
+
+.primary-button:disabled {
+    cursor: wait;
+    opacity: 0.7;
+}
+
+.notice,
+.device-info,
+.next-steps,
+.contact-panel {
+    margin-top: 24px;
+    padding: 24px;
+    border: 1px solid #2b3d50;
+    border-radius: 12px;
+    background: #111a25;
+}
+
+.notice {
+    border-left: 4px solid #e6bd60;
+    background: #211d15;
+}
+
+h2 {
+    color: #9acfff;
+    font-size: 1.5rem;
+}
+
+.notice h2 {
+    margin-top: 0;
+    color: #f1d48f;
+}
+
+.checks {
+    margin-top: 38px;
+}
+
+.run-summary {
+    min-height: 1.65em;
+    color: #d3deea;
+}
+
+.check-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: 16px;
+}
+
+.check-card {
+    padding: 20px;
+    border: 1px solid #2b3d50;
+    border-radius: 12px;
+    background: #111a25;
+}
+
+.check-card h3 {
+    margin-top: 0;
+    color: #9acfff;
+}
+
+.check-card p {
+    color: #c6d2de;
+}
+
+.check-result {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.status-pill {
+    display: inline-block;
+    padding: 3px 10px;
+    border: 1px solid #536274;
+    border-radius: 999px;
+    color: #e2e8ef;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.status-pill[data-state="pass"] {
+    border-color: #3b9c68;
+    background: #10251b;
+    color: #9ee2b6;
+}
+
+.status-pill[data-state="warning"] {
+    border-color: #b48b3b;
+    background: #2b2415;
+    color: #f2d58d;
+}
+
+.details-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: 14px;
+    margin: 20px 0 0;
+}
+
+.details-list div {
+    padding: 14px;
+    border-radius: 8px;
+    background: #0b131d;
+}
+
+.details-list dt {
+    color: #9acfff;
+    font-weight: 700;
+}
+
+.details-list dd {
+    margin: 4px 0 0;
+    overflow-wrap: anywhere;
+}
+
+.next-steps li {
+    margin-bottom: 8px;
+}
+
+.contact-panel {
+    text-align: center;
+    background: #132337;
+}
+
+.contact-link {
+    display: inline-block;
+    margin: 6px 12px;
+    font-weight: 700;
+}
+
+.site-footer {
+    display: flex;
+    justify-content: center;
+    gap: 10px 24px;
+    flex-wrap: wrap;
+    padding: 24px;
+    background: #070b11;
+    color: #c1ccd7;
+    text-align: center;
+}
+
+@media (max-width: 560px) {
+    .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .hero {
+        padding: 34px 18px;
+    }
+
+    .notice,
+    .device-info,
+    .next-steps,
+    .contact-panel {
+        padding: 18px;
+    }
+}

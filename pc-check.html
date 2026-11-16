@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Run a free, privacy-friendly browser and connection self-check from anywhere in Australia. No downloads or account required.">
+<meta name="theme-color" content="#0b1018">
+<title>Free PC Self-Check | ZF Consulting Services</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="pc-check.css">
+<script src="pc-check.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+    <a class="brand" href="index.html">ZF CONSULTING SERVICES</a>
+    <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+</header>
+
+<main id="main" class="page-main">
+    <section class="hero">
+        <p class="eyebrow">Free online check · Australia-wide</p>
+        <h1>Check a few basics on your device</h1>
+        <p class="lead">Run a quick check of your connection to this website, secure browsing and basic browser support. Works on Windows, Mac, Linux, tablets and phones.</p>
+        <p class="privacy-note" id="privacy-note">No downloads or account required. The check runs in your browser and does not send diagnostic results to ZF Consulting Services.</p>
+        <button class="primary-button" id="run-checks" type="button" aria-describedby="privacy-note">Run the free check</button>
+        <noscript><p class="privacy-note">Enable JavaScript in your browser to run these checks. This page does not install anything.</p></noscript>
+    </section>
+
+    <aside class="notice" aria-labelledby="limits-title">
+        <h2 id="limits-title">What this check can and cannot do</h2>
+        <p>This is a basic browser self-check, not a full PC health or malware scan. A website cannot inspect your files, installed apps, antivirus status or hardware health. A passing result does not prove that a device is free from malware or security problems.</p>
+    </aside>
+
+    <section class="checks" aria-labelledby="checks-title">
+        <h2 id="checks-title">Your checks</h2>
+        <p id="run-summary" class="run-summary" role="status" aria-live="polite" aria-atomic="true">No checks have been run yet.</p>
+        <div class="check-grid">
+            <article class="check-card" id="connection-card">
+                <h3>Connection to this website</h3>
+                <p>Checks whether this site responds from your device. It does not measure internet speed or check other websites.</p>
+                <p class="check-result"><span class="status-pill" id="connection-status" data-state="pending">Not run</span><span id="connection-result">Select “Run the free check” to begin.</span></p>
+            </article>
+            <article class="check-card" id="https-card">
+                <h3>Secure connection</h3>
+                <p>Checks whether this page is using HTTPS.</p>
+                <p class="check-result"><span class="status-pill" id="https-status" data-state="pending">Not run</span><span id="https-result">Select “Run the free check” to begin.</span></p>
+            </article>
+            <article class="check-card" id="browser-card">
+                <h3>Browser support</h3>
+                <p>Checks for the basic browser features used by this page.</p>
+                <p class="check-result"><span class="status-pill" id="browser-status" data-state="pending">Not run</span><span id="browser-result">Select “Run the free check” to begin.</span></p>
+            </article>
+        </div>
+    </section>
+
+    <section class="device-info" aria-labelledby="device-title">
+        <h2 id="device-title">Basic device information</h2>
+        <p>This information comes from your browser and is shown only on this page. It is not uploaded or saved.</p>
+        <dl class="details-list">
+            <div><dt>Operating system</dt><dd id="device-platform">Shown after you run the check.</dd></div>
+            <div><dt>Browser</dt><dd id="device-browser">Shown after you run the check.</dd></div>
+            <div><dt>Display size</dt><dd id="device-display">Shown after you run the check.</dd></div>
+        </dl>
+    </section>
+
+    <section class="next-steps" aria-labelledby="next-steps-title">
+        <h2 id="next-steps-title">If a check needs attention</h2>
+        <ul>
+            <li>If this website cannot be reached, check your connection and try again later.</li>
+            <li>If the page is not using HTTPS, do not enter personal or payment information.</li>
+            <li>If your browser is missing features, update it using its official settings or app store.</li>
+        </ul>
+        <p>For more detailed Windows security indicators, see the <a href="pc-security-check.html">optional Windows-only local report</a>. It is separate from this browser check.</p>
+    </section>
+
+    <section class="contact-panel" aria-labelledby="contact-title">
+        <h2 id="contact-title">Want help understanding your results?</h2>
+        <p>Contact ZF Consulting Services to discuss your next steps.</p>
+        <a class="contact-link" href="mailto:info@zfconsulting.com.au">Email info@zfconsulting.com.au</a>
+        <a class="contact-link" href="tel:0406889204">Call 0406 889 204</a>
+    </section>
+</main>
+
+<footer class="site-footer">
+    © 2026 ZF Consulting Services. Free basic browser self-check.
+    <a href="index.html">Return to the homepage</a>
+</footer>
+</body>
+</html>
