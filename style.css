@@ -34,6 +34,44 @@ body::before {
     pointer-events: none;
 }
 
+.australia-highlight {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: visible;
+    z-index: 0 !important;
+    pointer-events: none;
+}
+
+.australia-highlight path {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+}
+
+.australia-highlight .australia-track {
+    stroke: rgba(255, 170, 82, .3);
+    stroke-width: 3;
+}
+
+.australia-highlight .australia-trail {
+    stroke: rgba(255, 163, 68, .75);
+    stroke-width: 13;
+    stroke-dasharray: 110 890;
+    filter: blur(7px);
+    animation: australiaGlow 12s linear infinite;
+}
+
+.australia-highlight .australia-edge {
+    stroke: rgba(255, 250, 232, .95);
+    stroke-width: 4;
+    stroke-dasharray: 95 905;
+    filter: drop-shadow(0 0 7px rgba(255, 176, 92, .95));
+    animation: australiaGlow 12s linear infinite;
+}
+
 @media (max-width: 700px) {
     .orbit-line {
         left: 78%;
@@ -115,8 +153,19 @@ body > * {
     }
 }
 
+@keyframes australiaGlow {
+    to {
+        stroke-dashoffset: -1000;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .orbit-line ellipse {
+        animation: none;
+    }
+
+    .australia-highlight .australia-trail,
+    .australia-highlight .australia-edge {
         animation: none;
     }
 }
