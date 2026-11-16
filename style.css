@@ -21,38 +21,76 @@ body::before {
     z-index: -1;
 }
 
-body::after {
-    content: "";
+.orbit-line {
     position: fixed;
-    left: 58%;
-    top: 47%;
-    width: 150vw;
-    height: 420px;
-    border-radius: 50%;
+    left: 74%;
+    top: 49%;
+    width: min(58vw, 760px);
+    height: min(58vw, 760px);
+    overflow: visible;
     transform: translate(-50%, -50%);
-    background: conic-gradient(
-        from 90deg,
-        rgba(255,255,255,0) 0deg,
-        rgba(255,255,255,0.75) 12deg,
-        rgba(255,255,255,0.2) 26deg,
-        rgba(255,255,255,0.05) 52deg,
-        rgba(255,255,255,0.72) 82deg,
-        rgba(255,255,255,0.12) 116deg,
-        rgba(255,255,255,0) 150deg,
-        rgba(255,255,255,0) 360deg
-    );
-    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 0);
-    mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 0);
-    opacity: 0.9;
-    filter: blur(1px) saturate(1.4);
-    animation: horizontalSweep 22s linear infinite;
-    z-index: 0;
+    z-index: 0 !important;
     pointer-events: none;
+}
+
+@media (max-width: 700px) {
+    .orbit-line {
+        left: 78%;
+        top: 46%;
+        width: min(96vw, 560px);
+        height: min(96vw, 560px);
+    }
 }
 
 body > * {
     position: relative;
     z-index: 1;
+}
+
+.orbit-line ellipse {
+    fill: none;
+    stroke: rgba(245, 251, 255, .76);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dashoffset: 0;
+    filter: drop-shadow(0 0 5px rgba(225, 246, 255, .8));
+}
+
+.orbit-line .orbit-inner {
+    stroke-dasharray: 180 820;
+    animation: equatorialOrbit 32s linear infinite;
+}
+
+.orbit-line .orbit-middle {
+    stroke-dasharray: 155 845;
+    animation: equatorialOrbit 42s linear infinite reverse;
+}
+
+.orbit-line .orbit-outer {
+    stroke: rgba(245, 251, 255, .48);
+    stroke-dasharray: 130 870;
+    animation: equatorialOrbit 58s linear infinite;
+}
+
+.orbit-line .orbit-glow {
+    stroke: rgba(255, 255, 255, .26);
+    stroke-width: 12;
+    filter: blur(5px);
+}
+
+.orbit-line .orbit-glow-inner {
+    stroke-dasharray: 220 780;
+}
+
+.orbit-line .orbit-glow-middle {
+    stroke-dasharray: 195 805;
+    animation: equatorialOrbit 42s linear infinite reverse;
+}
+
+.orbit-line .orbit-glow-outer {
+    stroke: rgba(255, 255, 255, .16);
+    stroke-dasharray: 170 830;
+    animation: equatorialOrbit 58s linear infinite;
 }
 
 @keyframes ambientGlow {
@@ -70,15 +108,15 @@ body > * {
     }
 }
 
-@keyframes horizontalSweep {
-    0% {
-        transform: translate(-50%, -50%) translateX(18vw) scale(1);
+@keyframes equatorialOrbit {
+    to {
+        stroke-dashoffset: -1000;
     }
-    50% {
-        transform: translate(-50%, -50%) translateX(0vw) scale(1.02);
-    }
-    100% {
-        transform: translate(-50%, -50%) translateX(-18vw) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .orbit-line ellipse {
+        animation: none;
     }
 }
 
