@@ -1,0 +1,36 @@
+body {
+    background: #050505;
+    color: #ffffff;
+}
+
+h1, h2, h3 {
+    color: #78b8ff;
+}
+
+p {
+    color: #cccccc;
+}
+
+.service {
+    background: #151515;
+    color: #ffffff;
+    border: 1px solid #303030;
+}
+
+.service h3 {
+    color: #78b8ff;
+}
+
+.service p {
+    color: #cccccc;
+}
+
+header {
+    background: #050505;
+    color: #ffffff;
+}
+
+footer {
+    background: #050505;
+    color: #9cff57;
+}
