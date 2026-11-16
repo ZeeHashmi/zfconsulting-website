@@ -2,6 +2,9 @@
 
 const runButton = document.querySelector("#run-checks");
 const summary = document.querySelector("#run-summary");
+const hero = document.querySelector(".hero");
+const main = document.querySelector("#main");
+const checkingIndicator = document.querySelector("#checking-indicator");
 
 const statusLabels = {
     pass: "Looks OK",
@@ -135,6 +138,9 @@ function checkBrowserSupport() {
 async function runChecks() {
     runButton.disabled = true;
     runButton.textContent = "Checks running...";
+    hero.classList.add("is-checking");
+    main.setAttribute("aria-busy", "true");
+    checkingIndicator.hidden = false;
     summary.textContent = "Running checks. Results are displayed only on this page.";
     showDeviceInfo();
 
@@ -143,6 +149,7 @@ async function runChecks() {
             checkConnection(),
             Promise.resolve(checkHttps()),
             Promise.resolve(checkBrowserSupport()),
+            new Promise((resolve) => window.setTimeout(resolve, 600)),
         ]);
 
         showResult("connection", connection.state, connection.message);
@@ -156,6 +163,9 @@ async function runChecks() {
     } finally {
         runButton.disabled = false;
         runButton.textContent = "Run the free check again";
+        hero.classList.remove("is-checking");
+        main.setAttribute("aria-busy", "false");
+        checkingIndicator.hidden = true;
     }
 }
 
