@@ -7,6 +7,24 @@ body {
     color: #ffffff;
 }
 
+/* Shared navigation treatment across every page. */
+header nav a,
+.site-nav a,
+.site-header nav a {
+    color: #e5f7ff;
+    text-decoration: none;
+    transition: color .2s ease;
+}
+
+header nav a:hover,
+.site-nav a:hover,
+.site-header nav a:hover,
+header nav a:focus-visible,
+.site-nav a:focus-visible,
+.site-header nav a:focus-visible {
+    color: #78b8ff;
+}
+
 body::before {
     content: "";
     position: fixed;

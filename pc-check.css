@@ -96,6 +96,17 @@ button:focus-visible {
     color: #8bc7ff;
 }
 
+.site-header nav a {
+    color: #e5f7ff;
+    text-decoration: none;
+    transition: color .2s ease;
+}
+
+.site-header nav a:hover,
+.site-header nav a:focus-visible {
+    color: #78b8ff;
+}
+
 .page-main {
     width: min(100% - 32px, 1040px);
     margin: 0 auto;
