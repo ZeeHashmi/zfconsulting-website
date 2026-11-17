@@ -128,35 +128,35 @@ body > * {
 
 .orbit-line ellipse {
     fill: none;
-    stroke: rgba(103, 220, 255, .9);
-    stroke-width: 4;
+    stroke: #009fff;
+    stroke-width: 5;
     stroke-linecap: round;
     stroke-dashoffset: 0;
-    filter: drop-shadow(0 0 6px rgba(67, 196, 255, .95)) drop-shadow(0 0 16px rgba(20, 128, 255, .58));
+    filter: drop-shadow(0 0 8px rgba(0, 174, 255, 1)) drop-shadow(0 0 22px rgba(0, 102, 255, .95));
 }
 
 .orbit-line .orbit-inner {
-    stroke: rgba(166, 242, 255, .96);
+    stroke: #00d9ff;
     stroke-dasharray: 180 820;
     animation: equatorialOrbit 32s linear infinite;
 }
 
 .orbit-line .orbit-middle {
-    stroke: rgba(64, 190, 255, .82);
+    stroke: #009fff;
     stroke-dasharray: 155 845;
     animation: equatorialOrbit 42s linear infinite reverse;
 }
 
 .orbit-line .orbit-outer {
-    stroke: rgba(32, 143, 255, .65);
+    stroke: #0876ff;
     stroke-dasharray: 130 870;
     animation: equatorialOrbit 58s linear infinite;
 }
 
 .orbit-line .orbit-glow {
-    stroke: rgba(39, 174, 255, .38);
-    stroke-width: 12;
-    filter: blur(5px);
+    stroke: rgba(0, 153, 255, .92);
+    stroke-width: 24;
+    filter: blur(10px);
 }
 
 .orbit-line .orbit-glow-inner {
@@ -164,13 +164,13 @@ body > * {
 }
 
 .orbit-line .orbit-glow-middle {
-    stroke: rgba(28, 148, 255, .34);
+    stroke: rgba(0, 124, 255, .84);
     stroke-dasharray: 195 805;
     animation: equatorialOrbit 42s linear infinite reverse;
 }
 
 .orbit-line .orbit-glow-outer {
-    stroke: rgba(17, 111, 255, .26);
+    stroke: rgba(0, 91, 255, .72);
     stroke-dasharray: 170 830;
     animation: equatorialOrbit 58s linear infinite;
 }
