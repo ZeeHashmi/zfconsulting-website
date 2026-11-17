@@ -7,6 +7,28 @@ body {
     color: #ffffff;
 }
 
+body > footer:not(.legal-footer) {
+    display: none;
+}
+
+.legal-footer {
+    display: block !important;
+    margin-top: 0;
+    padding: 25px 16px;
+    background: #05090e;
+    color: #ffffff !important;
+    text-align: center;
+    font-size: .92rem;
+}
+
+.legal-footer a,
+.legal-footer a:visited,
+.legal-footer a:hover,
+.legal-footer a:focus-visible {
+    color: #ffffff !important;
+    text-decoration: underline;
+}
+
 /* Shared navigation treatment across every page. */
 header nav a,
 .site-nav a,
