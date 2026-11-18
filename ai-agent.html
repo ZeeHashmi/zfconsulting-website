@@ -12,7 +12,7 @@
 
   gtag('config', 'G-JTR4T6F3KF');
 </script>
-<meta name="description" content="Discover the planned ZF AI Agent: a personal AI assistant designed to run on your Windows computer, with proposed personal and business editions.">
+<meta name="description" content="Try the ZF AI Agent web demo free for up to 10 messages, then explore proposed personal and business editions.">
 <meta name="theme-color" content="#071a2d">
 <link rel="canonical" href="https://zfconsulting.com.au/ai-agent.html">
 <title>ZF AI Agent | Local AI Assistant for Windows</title>
@@ -50,6 +50,10 @@ h1{max-width:850px;margin:12px 0;color:#e5f7ff;font-size:clamp(2.4rem,6vw,4.2rem
 .step p{color:#d2dfeb}
 .button{display:inline-block;margin-top:18px;padding:13px 22px;border:1px solid #55dfff;border-radius:8px;background:#08bfe8;color:#041522;font-weight:bold;text-decoration:none}
 .button:hover{background:#75eaff;color:#041522}
+.button.secondary{margin-left:10px;background:transparent;color:#a8edff}
+.button.secondary:hover{background:#102f49;color:#fff}
+.demo-intro{max-width:780px;color:#d2dfeb}
+.demo-privacy{margin:12px 0 0;color:#aebdca;font-size:.9rem}
 footer{text-align:center;padding:24px;background:rgba(4,10,18,.9);color:#c3d0dd}
 footer a{color:#a8dcff}
 @media(max-width:800px){header{padding:18px 5%}nav{gap:12px 16px}main{width:min(100% - 24px,1120px);padding-top:24px}.plans,.journey{grid-template-columns:1fr}.plan-subtitle{min-height:0}}
@@ -68,11 +72,27 @@ footer a{color:#a8dcff}
 </header>
 <main>
   <section class="hero">
-    <p class="eyebrow">ZF Consulting Services · Planned product</p>
+    <p class="eyebrow">ZF Consulting Services · AI Agent</p>
     <h1>ZF AI Agent</h1>
-    <p><strong>Your personal AI assistant. Designed to run on your own computer.</strong></p>
-    <p>ZF AI Agent is a planned downloadable Windows application for personal and business assistance. The product is in development and is not currently available to download or buy.</p>
-    <span class="status">Coming soon · No purchases are being accepted</span>
+    <p><strong>Try the AI Agent before choosing an edition.</strong></p>
+    <p>Test the web assistant for free. The demo is separate from the planned downloadable Windows application and cannot access files on your computer.</p>
+    <a class="button" href="#free-demo">Try 10 messages free</a>
+    <span class="status">Demo available · No purchases are being accepted</span>
+  </section>
+
+  <section class="section" id="free-demo" aria-labelledby="free-demo-title">
+    <h2 id="free-demo-title">Try the AI Agent</h2>
+    <p class="demo-intro">Test the web assistant before choosing an edition. The demo allows 10 successful messages per browser and IP address each UTC day. It does not install software or access files on your device.</p>
+    <div class="zee-ai-widget zee-ai-widget-embedded" data-zee-ai-widget data-zee-ai-mode="agent" data-embedded hidden>
+      <button class="zee-ai-launcher" type="button" data-zee-launcher aria-expanded="false" aria-controls="zf-agent-chat-panel">Open AI Agent demo</button>
+      <section class="zee-ai-panel" id="zf-agent-chat-panel" data-zee-panel hidden aria-label="ZF AI Agent demo chat">
+        <div class="zee-ai-panel-header"><strong>ZF AI Agent demo</strong><button class="zee-ai-close" type="button" data-zee-close aria-label="Close AI Agent demo">×</button></div>
+        <div class="zee-ai-messages" data-zee-messages aria-live="polite"><div class="zee-message zee-message-assistant">Hi, I’m the ZF AI Agent demo. What would you like to try?</div></div>
+        <p class="zee-ai-note">Powered by OpenAI GPT-4o mini. Don’t enter confidential or personal information. <a class="zee-ai-email" href="privacy.html">Privacy details</a>.</p>
+        <form class="zee-ai-form" data-zee-form><input class="zee-ai-input" data-zee-input type="text" maxlength="2000" placeholder="Ask the AI Agent..." aria-label="Ask the ZF AI Agent demo"><button class="zee-ai-send" type="submit">Send</button></form>
+      </section>
+    </div>
+    <p class="demo-privacy">The demo is a web preview; messages are processed by OpenAI. It does not represent a locally installed or offline product.</p>
   </section>
 
   <section class="section" aria-labelledby="editions-title">
@@ -84,12 +104,12 @@ footer a{color:#a8dcff}
         <p class="price">$0</p>
         <p class="plan-subtitle">Free web demonstration</p>
         <ul>
-          <li>Planned interactive browser demonstration.</li>
-          <li>Limited questions and sample workflows.</li>
+          <li>Live browser-based AI Agent preview.</li>
+          <li>10 successful messages per browser and IP address each UTC day.</li>
           <li>Fictional sample documents and data.</li>
           <li>No local installation.</li>
         </ul>
-        <span class="status">Demo coming soon</span>
+        <span class="status">Free demo available</span>
       </article>
       <article class="plan">
         <h3>Personal Edition</h3>
@@ -125,7 +145,7 @@ footer a{color:#a8dcff}
     <div class="journey">
       <article class="step">
         <h3>1. Try the free demo</h3>
-        <p>The web demonstration is being planned with limited sample workflows and fictional documents. It is not available yet.</p>
+        <p>Try the live web demonstration above before choosing an edition. It uses sample assistance and does not access files on your computer.</p>
       </article>
       <article class="step">
         <h3>2. Select a licence</h3>
@@ -152,5 +172,6 @@ footer a{color:#a8dcff}
 </main>
 <footer>© 2026 ZF Consulting Services Pty Ltd · Brisbane, Queensland, Australia<br><a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a></footer>
 <footer class="legal-footer">ZF Consulting Services Pty Ltd · ABN 30 154 539 438 · Copyright 2026<br><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></footer>
+<link rel="stylesheet" href="zee-ai-widget.css?v=agent-demo-1"><script src="supabase-demo-config.js"></script><script src="zee-ai-widget.js"></script>
 </body>
 </html>
