@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="z-top" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#27edee"/>
+      <stop offset="1" stop-color="#087cff"/>
+    </linearGradient>
+    <linearGradient id="z-diagonal" x1="0.8" y1="0" x2="0.2" y2="1">
+      <stop stop-color="#28e5f5"/>
+      <stop offset="0.58" stop-color="#03b6fa"/>
+      <stop offset="1" stop-color="#075fff"/>
+    </linearGradient>
+    <linearGradient id="z-base" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#075bff"/>
+      <stop offset="1" stop-color="#00c9f4"/>
+    </linearGradient>
+    <linearGradient id="orbit-blue" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#00dfff"/>
+      <stop offset="1" stop-color="#0878ff"/>
+    </linearGradient>
+  </defs>
+  <path d="M330 132C433 64 501 88 488 151c-7 34-40 70-79 99 54-32 99-78 102-124 5-72-75-99-181 6Z" fill="url(#orbit-blue)"/>
+  <path d="M290 357c-92 82-200 88-208 26-4-31 31-73 83-110-70 40-112 91-99 130 19 58 130 57 224-46Z" fill="url(#orbit-blue)"/>
+  <path d="M410 138 210 375h-80l200-237Z" fill="url(#z-diagonal)"/>
+  <path d="M128 138h282l-43 52H170l-42-52Z" fill="url(#z-top)"/>
+  <path d="M210 318h155l45 57H130l80-57Z" fill="url(#z-base)"/>
+</svg>

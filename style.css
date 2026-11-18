@@ -29,6 +29,20 @@ body > footer:not(.legal-footer) {
     text-decoration: underline;
 }
 
+.site-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+}
+
+.brand-z {
+    display: block;
+    width: 2.2em;
+    height: 1.8em;
+    object-fit: contain;
+    flex: none;
+}
+
 /* Shared navigation treatment across every page. */
 header nav a,
 .site-nav a,
