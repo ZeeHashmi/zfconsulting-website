@@ -226,11 +226,37 @@ async function callRateLimitRpc(
   );
 }
 
-function getCountryCode(request: Request) {
+async function lookupCountryCode(clientIp: string) {
+  try {
+    const response = await fetch(
+      `https://ipapi.co/${encodeURIComponent(clientIp)}/country/`,
+      {
+        headers: { Accept: "text/plain" },
+        signal: AbortSignal.timeout(4_000),
+      },
+    );
+    if (!response.ok) return null;
+
+    const countryCode = (await response.text()).trim().toUpperCase();
+    return /^[A-Z]{2}$/.test(countryCode) && countryCode !== "XX" &&
+        countryCode !== "T1"
+      ? countryCode
+      : null;
+  } catch {
+    return null;
+  }
+}
+
+async function getCountryCode(request: Request, clientIp: string) {
   const countryCode = request.headers.get("cf-ipcountry")?.trim().toUpperCase();
-  return countryCode && /^[A-Z]{2}$/.test(countryCode) && countryCode !== "XX"
-    ? countryCode
-    : null;
+  if (
+    countryCode && /^[A-Z]{2}$/.test(countryCode) && countryCode !== "XX" &&
+    countryCode !== "T1"
+  ) {
+    return countryCode;
+  }
+
+  return await lookupCountryCode(clientIp);
 }
 
 async function checkCountryAccess(
@@ -368,7 +394,7 @@ Deno.serve(async (request) => {
     supabaseUrl,
     serviceRoleKey,
     ipHash,
-    getCountryCode(request),
+    await getCountryCode(request, clientIp),
   );
   if (!countryAccess.allowed) {
     return jsonResponse(origin, countryAccess.status, {

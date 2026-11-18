@@ -40,9 +40,13 @@ Edge Function secret to select another compatible model.
 
 The widget starts hidden and calls the Edge Function's `/access` route before
 showing the chat launcher. The function checks the trusted Supabase
-`cf-ipcountry` header; it does not accept a country code from the browser body.
-Only country code `AU` is allowed. Missing or unknown country codes fail closed
-without creating a block. Australian requests remain allowed even if a stale
+`cf-ipcountry` header first; it does not accept a country code from the browser body.
+If that country is missing or unknown, the function uses the gateway's
+`cf-connecting-ip` address for a server-side lookup with ipapi.co. That provider
+receives the visitor IP only for this fallback lookup. Only country code `AU`
+is allowed. If both sources fail, access fails closed without creating a block.
+Confirm ipapi.co terms and request limits for production use. Australian
+requests remain allowed even if a stale
 block row exists. Other country codes are denied before any OpenAI request and
 the function stores only an HMAC-SHA-256 IP hash and country code in
 `zee_ai_demo_ip_blocks` for 30 days. The function checks the block table before
