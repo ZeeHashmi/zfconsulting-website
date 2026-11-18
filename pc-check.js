@@ -136,6 +136,11 @@ function checkBrowserSupport() {
 }
 
 async function runChecks() {
+    // Record usage only. Do not send device details or diagnostic results to Analytics.
+    if (typeof window.gtag === "function") {
+        window.gtag("event", "pc_check_started");
+    }
+
     runButton.disabled = true;
     runButton.textContent = "Checks running...";
     hero.classList.add("is-checking");
@@ -160,6 +165,13 @@ async function runChecks() {
         summary.textContent = allPassed
             ? "Checks finished. These basic checks passed; this is not a full PC security scan."
             : "Checks finished. Review the notes above; these results do not diagnose all PC problems.";
+
+        // Send only an aggregate completion outcome, never individual check or device details.
+        if (typeof window.gtag === "function") {
+            window.gtag("event", "pc_check_completed", {
+                check_outcome: allPassed ? "passed" : "needs_attention"
+            });
+        }
     } finally {
         runButton.disabled = false;
         runButton.textContent = "Run the free check again";
