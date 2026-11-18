@@ -1,0 +1,23 @@
+# Local environment files and secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Supabase local development state
+supabase/.env
+supabase/.temp/
+
+# Private keys and certificates
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local credentials and service-account files
+credentials.json
+service-account*.json
+
+# Local tooling artifacts
+node_modules/
+.DS_Store
