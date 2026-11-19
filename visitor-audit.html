@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="View a privacy-conscious digital record of your visit to ZF Consulting Services.">
+<link rel="canonical" href="https://zfconsulting.com.au/visitor-audit.html">
+<link rel="stylesheet" href="style.css?v=zf-brand-1">
+<title>Digital Visitor Record | ZF Consulting Services</title>
+<style>
+.audit-wrap{max-width:760px;margin:56px auto;padding:0 20px}.audit-card{background:rgba(8,22,38,.96);border:1px solid #31516b;border-radius:14px;padding:28px;box-shadow:0 12px 38px #0006}.audit-card h1{margin-top:0}.audit-intro{color:#d4e2ef}.audit-grid{display:grid;grid-template-columns:150px 1fr;gap:12px 18px;margin:24px 0}.audit-label{color:#9fb7cc;font-weight:700}.audit-value{color:#f2f7fb;overflow-wrap:anywhere}.audit-actions{display:flex;gap:12px;flex-wrap:wrap}.audit-button{border:0;border-radius:7px;padding:12px 18px;background:#246fbd;color:#fff;font-weight:700;cursor:pointer}.audit-button.secondary{background:#24394e;border:1px solid #45617a}.audit-note{font-size:.9rem;color:#b7c7d5}.audit-status{min-height:1.5em;color:#a8dcff}.audit-status.error{color:#ffb5a8}@media(max-width:560px){.audit-grid{grid-template-columns:1fr;gap:4px}.audit-label:not(:first-child){margin-top:12px}.audit-card{padding:20px}}
+</style>
+</head>
+<body>
+<header><a class="site-brand" href="index.html"><img class="brand-z" src="assets/zf-z-mark.svg" alt="Z"><strong>F CONSULTING SERVICES</strong></a><nav><a href="index.html">Home</a> · <a href="privacy.html">Privacy</a></nav></header>
+<main class="audit-wrap">
+<section class="audit-card" aria-labelledby="audit-title">
+<p class="audit-label">ZF CONSULTING SERVICES · VISITOR TRANSPARENCY</p>
+<h1 id="audit-title">Digital visitor record</h1>
+<p class="audit-intro">This is a digital representation of this browser visit. It is an informational audit record, not a signature or proof of identity.</p>
+<div class="audit-grid" aria-live="polite">
+<span class="audit-label">VISITOR REFERENCE</span><span class="audit-value" id="visitor-ref">Generated for this session</span>
+<span class="audit-label">BROWSER</span><span class="audit-value" id="visitor-browser">Detecting…</span>
+<span class="audit-label">OPERATING SYSTEM</span><span class="audit-value" id="visitor-os">Detecting…</span>
+<span class="audit-label">DEVICE</span><span class="audit-value" id="visitor-device">Detecting…</span>
+<span class="audit-label">LOCAL DATE &amp; TIME</span><span class="audit-value" id="visitor-time">—</span>
+<span class="audit-label">PAGE</span><span class="audit-value">visitor-audit.html</span>
+<span class="audit-label">IP ADDRESS</span><span class="audit-value">Not displayed in this public record</span>
+</div>
+<p class="audit-note">No visitor event is sent to ZF Consulting until you choose to create the record below. If you agree, the server stores a short-lived pseudonymous network fingerprint, country (when provided by the network edge), browser, device type, page and timestamp for security and site-operation purposes. Raw IP addresses are not stored in this audit database.</p>
+<div class="audit-actions">
+<button class="audit-button" id="audit-consent" type="button">Agree and create my record</button>
+<button class="audit-button secondary" id="audit-refresh" type="button">Refresh details</button>
+</div>
+<p class="audit-status" id="audit-status" role="status" aria-live="polite"></p>
+<p class="audit-note">You can read our <a href="privacy.html">Privacy Policy</a> or request access to applicable personal information via <a href="mailto:info@zfconsulting.com.au?subject=Visitor%20data%20request">info@zfconsulting.com.au</a>.</p>
+</section>
+</main>
+<footer class="legal-footer">ZF Consulting Services Pty Ltd · ABN 30 154 539 438 · Copyright 2026<br><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></footer>
+<script src="supabase-demo-config.js"></script><script src="visitor-audit.js"></script>
+</body>
+</html>

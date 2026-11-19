@@ -1,2 +1,5 @@
 [functions.zee-ai-demo]
 verify_jwt = false
+
+[functions.visitor-audit]
+verify_jwt = false
