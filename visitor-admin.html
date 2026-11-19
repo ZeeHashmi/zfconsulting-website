@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Visitor Audit Admin | ZF Consulting Services</title>
+<link rel="stylesheet" href="style.css?v=zf-brand-1">
+<style>
+.admin-wrap{max-width:1100px;margin:48px auto;padding:0 20px}.admin-card{background:rgba(8,22,38,.97);border:1px solid #31516b;border-radius:12px;padding:24px;margin-bottom:20px}.admin-form{display:grid;gap:12px;max-width:420px}.admin-form input{padding:12px;border-radius:6px;border:1px solid #526b82;background:#101e2b;color:#fff}.admin-button{padding:11px 16px;background:#246fbd;color:#fff;border:0;border-radius:6px;font-weight:700;cursor:pointer}.admin-button:disabled{opacity:.6}.admin-table-wrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:780px}th,td{text-align:left;padding:11px;border-bottom:1px solid #29445c;font-size:.9rem}th{color:#9ed3ff}td{color:#e7eff7}.admin-status{color:#a8dcff;min-height:1.5em}.admin-status.error{color:#ffb5a8}.muted{color:#b7c7d5;font-size:.9rem}
+</style>
+</head>
+<body>
+<header><a class="site-brand" href="index.html"><img class="brand-z" src="assets/zf-z-mark.svg" alt="Z"><strong>F CONSULTING SERVICES</strong></a><nav><a href="index.html">Home</a> · <a href="visitor-audit.html">Visitor record</a></nav></header>
+<main class="admin-wrap">
+<section class="admin-card">
+<h1>Private visitor audit</h1>
+<p class="muted">Administrator access only. Sign in with the Supabase Auth account configured for visitor-audit administration. Access tokens are held in memory and are not saved to browser storage.</p>
+<form class="admin-form" id="login-form">
+<label for="email">Administrator email</label><input id="email" type="email" autocomplete="username" required>
+<label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required>
+<button class="admin-button" id="login-button" type="submit">Sign in</button>
+</form>
+<p class="admin-status" id="admin-status" role="status" aria-live="polite"></p>
+</section>
+<section class="admin-card" id="records-panel" hidden>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+<div><h2>Recent visitor events</h2><p class="muted">Up to 200 records, retained for up to 30 days. IP values are represented only by a truncated keyed fingerprint.</p></div>
+<div><button class="admin-button" id="refresh-button" type="button">Refresh</button> <button class="admin-button" id="logout-button" type="button">Sign out</button></div>
+</div>
+<div class="admin-table-wrap"><table><thead><tr><th>Date / time</th><th>Visitor ref</th><th>Page</th><th>Browser</th><th>OS</th><th>Device</th><th>Country</th><th>Network ref</th></tr></thead><tbody id="records-body"></tbody></table></div>
+</section>
+</main>
+<footer class="legal-footer">ZF Consulting Services Pty Ltd · <a href="privacy.html">Privacy Policy</a></footer>
+<script src="supabase-demo-config.js"></script><script src="visitor-admin.js"></script>
+</body>
+</html>
