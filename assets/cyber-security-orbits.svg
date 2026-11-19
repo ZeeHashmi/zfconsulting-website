@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1672 941">
+  <defs>
+    <filter id="glow" x="-400%" y="-400%" width="900%" height="900%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="map-glow">
+      <stop offset="0" stop-color="#9cff57" stop-opacity=".75"/>
+      <stop offset=".65" stop-color="#68ff2f" stop-opacity=".4"/>
+      <stop offset="1" stop-color="#4dff19" stop-opacity="0"/>
+    </radialGradient>
+    <path id="australia-boundary" pathLength="1000" d="M 1255 444 L 1264 441 L 1271 458 L 1292 462 L 1308 464 L 1326 475 L 1337 477 L 1350 469 L 1351 451 L 1356 444 L 1361 464 L 1370 480 L 1381 493 L 1391 510 L 1396 534 L 1393 555 L 1390 570 L 1376 588 L 1362 595 L 1355 607 L 1341 615 L 1324 613 L 1313 599 L 1303 597 L 1294 585 L 1283 586 L 1272 581 L 1254 585 L 1242 588 L 1224 595 L 1204 600 L 1184 600 L 1170 606 L 1166 592 L 1161 578 L 1159 562 L 1152 555 L 1151 540 L 1161 530 L 1171 520 L 1181 516 L 1185 499 L 1198 490 L 1206 483 L 1214 476 L 1224 474 L 1231 464 L 1243 459 L 1251 449 Z"/>
+  </defs>
+  <ellipse cx="1275" cy="540" rx="160" ry="115" fill="url(#map-glow)">
+    <animate attributeName="opacity" values=".7;1;.7" dur="5s" repeatCount="indefinite"/>
+  </ellipse>
+  <use href="#australia-boundary" fill="none" stroke="#9cff57" stroke-opacity=".65" stroke-width="2" stroke-linejoin="round" filter="url(#glow)"/>
+  <use href="#australia-boundary" fill="none" stroke="#d5ffbc" stroke-width="3" stroke-linejoin="round" stroke-dasharray="65 435" filter="url(#glow)">
+    <animate attributeName="stroke-dashoffset" from="0" to="-1000" dur="8s" repeatCount="indefinite"/>
+  </use>
+  <circle r="4" fill="#d5ffbc" filter="url(#glow)">
+    <animateMotion dur="14s" repeatCount="indefinite" path="M 1038 526 Q 1175 458 1442 247 T 1672 213"/>
+  </circle>
+  <circle r="4" fill="#d5ffbc" filter="url(#glow)">
+    <animateMotion dur="18s" begin="-8s" repeatCount="indefinite" path="M 901 488 C 896 548 1003 623 1131 664 C 1270 712 1410 710 1510 675 C 1580 647 1635 615 1672 590"/>
+  </circle>
+  <circle r="4" fill="#d5ffbc" filter="url(#glow)">
+    <animateMotion dur="18s" begin="-15s" repeatCount="indefinite" path="M 901 488 C 896 548 1003 623 1131 664 C 1270 712 1410 710 1510 675 C 1580 647 1635 615 1672 590"/>
+  </circle>
+  <circle r="4" fill="#d5ffbc" filter="url(#glow)">
+    <animateMotion dur="16s" begin="-6s" repeatCount="indefinite" path="M 982 632 C 1000 748 1160 821 1343 749 C 1465 704 1575 610 1605 546"/>
+  </circle>
+</svg>
