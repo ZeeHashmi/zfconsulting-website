@@ -89,8 +89,14 @@ Deno.serve(async (request) => {
     if (typeof user.email !== "string" || user.email.toLowerCase() !== adminEmail) {
       return json(origin, 403, { error: "This account is not authorised to view visitor records." });
     }
+    const now = encodeURIComponent(new Date().toISOString());
+    const cleanup = await rest(url, serviceKey,
+      "/rest/v1/visitor_audit_events?expires_at=lt." + now, {
+        method: "DELETE", headers: { Prefer: "return=minimal" },
+      });
+    if (!cleanup.ok) return json(origin, 503, { error: "Could not apply visitor record retention." });
     const rows = await rest(url, serviceKey,
-      "/rest/v1/visitor_audit_events?select=id,visitor_id,visited_path,browser,operating_system,device_type,country_code,ip_fingerprint,created_at&expires_at=gt.now()&order=created_at.desc&limit=200");
+      "/rest/v1/visitor_audit_events?select=id,visitor_id,visited_path,browser,operating_system,device_type,country_code,ip_fingerprint,created_at&expires_at=gt." + now + "&order=created_at.desc&limit=200");
     if (!rows.ok) return json(origin, 503, { error: "Could not load visitor records." });
     return json(origin, 200, { events: await rows.json() });
   }
@@ -109,15 +115,13 @@ Deno.serve(async (request) => {
   }
 
   const ip = clientIp(request);
-  let ipHash: string | null = null;
-  if (ip) {
-    ipHash = await hmac("ip:" + ip, hmacSecret);
-    const limit = await rest(url, serviceKey, "/rest/v1/rpc/can_record_visitor_audit", {
-      method: "POST", body: JSON.stringify({ p_ip_hash: ipHash }),
-    }).catch(() => null);
-    if (!limit?.ok || await limit.json().catch(() => false) !== true) {
-      return json(origin, 429, { error: "Visitor recording limit reached. Please try again later." });
-    }
+  if (!ip) return json(origin, 503, { error: "The network could not be verified, so this visit was not recorded." });
+  const ipHash = await hmac("ip:" + ip, hmacSecret);
+  const limit = await rest(url, serviceKey, "/rest/v1/rpc/can_record_visitor_audit", {
+    method: "POST", body: JSON.stringify({ p_ip_hash: ipHash }),
+  }).catch(() => null);
+  if (!limit?.ok || await limit.json().catch(() => false) !== true) {
+    return json(origin, 429, { error: "Visitor recording limit reached. Please try again later." });
   }
 
   const ua = request.headers.get("user-agent") ?? "";
@@ -138,7 +142,8 @@ Deno.serve(async (request) => {
     }),
   });
   if (!record.ok) return json(origin, 503, { error: "Could not record this visit." });
-  await rest(url, serviceKey, "/rest/v1/visitor_audit_events?expires_at=lt.now()", {
+  const now = encodeURIComponent(new Date().toISOString());
+  await rest(url, serviceKey, "/rest/v1/visitor_audit_events?expires_at=lt." + now, {
     method: "DELETE",
     headers: { Prefer: "return=minimal" },
   }).catch(() => null);
