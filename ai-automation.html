@@ -33,6 +33,7 @@ h1{max-width:780px;margin:12px 0;color:#e5f7ff;font-size:clamp(2.4rem,6vw,4.2rem
 .content-section{padding:52px 0 8px}
 .content-section h2{margin:0 0 12px;color:#a8dcff;font-size:clamp(1.6rem,3vw,2.1rem)}
 .section-intro{max-width:800px;color:#d2dfeb}
+.subheading{margin:26px 0 8px;color:#d9edff;font-size:1.15rem}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:22px}
 .info-card{padding:23px;border:1px solid #304a63;border-radius:12px;background:rgba(8,20,34,.88);box-shadow:0 5px 22px #0005}
 .info-card h3{margin:0 0 8px;color:#8bc7ff}
@@ -87,13 +88,35 @@ footer strong{color:#e8f6ff}
 
   <section class="content-section" aria-labelledby="technology-title">
     <h2 id="technology-title">What I’m building</h2>
-    <p class="section-intro">The platform is being shaped around automated workflows, quality checks, and a clear way to manage work through an interactive dashboard.</p>
+    <p class="section-intro">The goal is to create a connected platform for intelligent business workflows, quality engineering and safer AI adoption. AI safety is built into the vision alongside automation, not treated as an afterthought.</p>
+    <h3 class="subheading">Current foundation</h3>
     <div class="card-grid">
       <article class="info-card"><h3>Python + FastAPI</h3><p>Backend services for the platform and its integrations.</p></article>
-      <article class="info-card"><h3>Playwright</h3><p>Browser automation and end-to-end software testing.</p></article>
+      <article class="info-card"><h3>Playwright</h3><p>Browser automation and end-to-end software testing, including the existing AI security test suite.</p></article>
       <article class="info-card"><h3>Next.js</h3><p>An interactive dashboard for managing and viewing workflows.</p></article>
-      <article class="info-card"><h3>AI-assisted workflows</h3><p>Automation designed to support practical business processes.</p></article>
+      <article class="info-card"><h3>AI-assisted workflows</h3><p>Automation designed to support practical business processes with appropriate human oversight.</p></article>
     </div>
+    <h3 class="subheading">Planned capabilities</h3>
+    <div class="card-grid">
+      <article class="info-card"><h3>AI safety and risk checks</h3><p>Structured assessment of AI application risks, with documented findings and recommendations.</p></article>
+      <article class="info-card"><h3>Agent permissions and oversight</h3><p>Evaluate tool access, sensitive actions, escalation paths and human approval controls.</p></article>
+      <article class="info-card"><h3>Evidence-based reporting</h3><p>Build assessment reports that capture test scope, evidence, limitations and remediation guidance.</p></article>
+    </div>
+    <p class="project-note">The current foundation and the planned capabilities are shown separately so visitors can see what exists today and what is still being developed.</p>
+  </section>
+
+  <section class="content-section" id="how-it-works" aria-labelledby="how-it-works-title">
+    <h2 id="how-it-works-title">How it works</h2>
+    <p class="section-intro">The intended workflow combines automation with checks and human decision-making. The exact integrations and controls will depend on each business use case.</p>
+    <div class="card-grid">
+      <article class="info-card"><h3>1. Receive a request</h3><p>A business request or customer enquiry enters the workflow.</p></article>
+      <article class="info-card"><h3>2. Analyse and coordinate</h3><p>AI-assisted components interpret the request and help coordinate the next task.</p></article>
+      <article class="info-card"><h3>3. Apply safety checks</h3><p>Planned controls assess permissions, sensitive data exposure and potentially unsafe instructions.</p></article>
+      <article class="info-card"><h3>4. Escalate for approval</h3><p>Actions that require authorisation are presented to a human decision-maker before execution.</p></article>
+      <article class="info-card"><h3>5. Test and record</h3><p>Automated tests validate expected behaviour, while workflow outcomes and evidence are recorded where supported.</p></article>
+      <article class="info-card"><h3>6. Respond and improve</h3><p>The workflow completes approved actions and uses test findings to guide improvements.</p></article>
+    </div>
+    <p class="project-note">This describes the target operating model. Not every step is currently implemented or connected in a production service.</p>
   </section>
 
   <section class="content-section" id="ai-security-test-suite" aria-labelledby="security-suite-title">
@@ -123,14 +146,29 @@ footer strong{color:#e8f6ff}
   </section>
 
   <section class="content-section" aria-labelledby="security-title">
-    <h2 id="security-title">AI security is part of the design</h2>
-    <p class="section-intro">I’m exploring security testing for AI applications, including how to identify and assess risks such as:</p>
+    <h2 id="security-title">AI safety and security capabilities</h2>
+    <p class="section-intro">The existing test suite provides a starting point for assessing common LLM risks. The broader assessment capability is planned to extend testing into the way AI agents access tools, handle information and perform actions.</p>
+    <h3 class="subheading">Existing test coverage</h3>
     <ul class="focus-list">
-      <li>Prompt injection</li>
+      <li>Prompt injection scenarios</li>
       <li>Jailbreak attempts</li>
-      <li>Sensitive information exposure</li>
-      <li>AI application security risks</li>
+      <li>Data leakage and personal information exposure</li>
+      <li>Pattern-based response validation</li>
+      <li>Mock mode for controlled testing</li>
     </ul>
+    <h3 class="subheading">Planned assessment areas</h3>
+    <ul class="focus-list">
+      <li>AI agent permissions and excessive tool access</li>
+      <li>Human approval and sensitive action controls</li>
+      <li>Secrets and confidential data handling</li>
+      <li>AI API and integration security</li>
+      <li>Risk classification and remediation tracking</li>
+      <li>Incident response and audit evidence</li>
+    </ul>
+    <p class="project-note">These planned areas are not represented as completed tests or regulatory certification. Assessments will be scoped and performed with the system owner's permission.</p>
+    <div class="actions">
+      <a class="button secondary" href="ai-safety-assessment.html">Explore AI Safety &amp; Security Assessment</a>
+    </div>
   </section>
 
   <section class="content-section" aria-labelledby="vision-title">
