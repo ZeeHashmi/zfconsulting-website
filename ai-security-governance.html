@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f8fc">
+  <title>AI Security &amp; Governance | ZF Consulting Services</title>
+  <meta name="description" content="AI security testing, governance and risk-readiness services for Australian organisations. Practical technical assurance aligned with current Australian AI guidance and emerging policy developments.">
+  <link rel="canonical" href="https://www.zfconsulting.com.au/ai-security-governance.html">
+  <meta property="og:title" content="AI Security &amp; Governance | ZF Consulting Services">
+  <meta property="og:description" content="Practical AI security testing, governance and risk-readiness support for Australian organisations.">
+  <meta property="og:url" content="https://www.zfconsulting.com.au/ai-security-governance.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ZF Consulting Services">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    :root{color-scheme:light;--ink:#14243a;--muted:#52647a;--blue:#155eef;--blue-dark:#1249b8;--teal:#087e8b;--line:#dce5ef;--surface:#fff;--soft:#f3f7fc;--pale:#eaf2ff;--shadow:0 14px 40px rgba(23,52,87,.08)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:#f7f9fc;color:var(--ink);font:16px/1.65 Arial,Helvetica,sans-serif}a{color:var(--blue);text-underline-offset:3px}a:hover{color:var(--blue-dark)}a:focus-visible{outline:3px solid #8bb7ff;outline-offset:3px;border-radius:4px}
+    .site-header{background:#fff;border-bottom:1px solid var(--line)}.nav-wrap{width:min(1160px,calc(100% - 40px));margin:auto;min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{color:#14243a;text-decoration:none;font-weight:800;letter-spacing:.055em;font-size:1rem;white-space:nowrap}.brand-mark{display:inline-grid;place-items:center;width:34px;height:34px;margin-right:8px;border-radius:9px;background:linear-gradient(135deg,#155eef,#087e8b);color:#fff;font-weight:900}.nav-links{display:flex;flex-wrap:wrap;gap:10px 22px}.nav-links a{color:#34465d;text-decoration:none;font-size:.92rem;font-weight:600}.nav-links a:hover{color:var(--blue)}
+    main{overflow:hidden}.container{width:min(1100px,calc(100% - 40px));margin:auto}.hero{padding:76px 0 64px;background:radial-gradient(ellipse at 85% 5%,rgba(21,94,239,.11),transparent 34%),linear-gradient(180deg,#fff,#f2f7ff);border-bottom:1px solid var(--line)}.eyebrow{margin:0 0 14px;color:var(--teal);font-size:.78rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.hero h1{max-width:850px;margin:0 0 20px;font-size:clamp(2.35rem,5.5vw,4.3rem);line-height:1.07;letter-spacing:-.04em;color:#10233e}.hero .lead{max-width:780px;margin:0;color:#40546d;font-size:clamp(1.08rem,2vw,1.25rem)}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border:1px solid var(--blue);border-radius:8px;background:var(--blue);color:#fff;text-decoration:none;font-weight:700}.btn:hover{background:var(--blue-dark);color:#fff}.btn-secondary{background:#fff;color:var(--blue)}.btn-secondary:hover{background:var(--pale);color:var(--blue-dark)}
+    .status-note{margin-top:28px;padding:15px 18px;border:1px solid #f1d59b;border-left:4px solid #d18a18;border-radius:9px;background:#fffaf0;color:#654914;max-width:900px;font-size:.94rem}.section{padding:62px 0}.section.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.section-head{max-width:760px;margin-bottom:28px}.section h2{margin:0 0 12px;color:#142d4c;font-size:clamp(1.75rem,3.5vw,2.45rem);line-height:1.18}.section-intro{margin:0;color:var(--muted);font-size:1.05rem}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.card{height:100%;padding:23px;border:1px solid var(--line);border-radius:13px;background:var(--surface);box-shadow:var(--shadow)}.card h3{margin:0 0 9px;color:#174b91;font-size:1.1rem}.card p{margin:0;color:var(--muted)}.number{display:inline-grid;place-items:center;width:34px;height:34px;margin-bottom:15px;border-radius:10px;background:var(--pale);color:var(--blue);font-weight:800}.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:start}.checklist{padding:0;margin:20px 0 0;list-style:none}.checklist li{position:relative;padding:0 0 13px 28px;color:#40546d}.checklist li:before{content:"✓";position:absolute;left:0;top:0;color:var(--teal);font-weight:800}.callout{padding:25px;border:1px solid #d5e4fa;border-radius:14px;background:#f0f6ff}.callout h3{margin:0 0 10px;color:#174b91}.callout p{margin:0;color:#465d78}.framework-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.framework{padding:19px;border:1px solid var(--line);border-radius:11px;background:#fff}.framework strong{display:block;margin-bottom:5px;color:#174b91}.framework p{margin:0;color:var(--muted);font-size:.94rem}.process{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.step{padding:20px;border:1px solid var(--line);border-radius:12px;background:#fff}.step b{display:block;margin-bottom:8px;color:var(--blue);font-size:.82rem;letter-spacing:.08em}.step h3{margin:0 0 8px;font-size:1rem;color:#173a68}.step p{margin:0;color:var(--muted);font-size:.93rem}.cta{padding:38px;border-radius:16px;background:linear-gradient(120deg,#123d75,#155eef);color:#fff}.cta h2{color:#fff}.cta p{max-width:720px;color:#e4edff}.cta .btn{background:#fff;border-color:#fff;color:#174b91}.cta .btn:hover{background:#eaf2ff}
+    .disclaimer{padding:20px;border:1px solid #dce5ef;border-radius:10px;background:#fff;color:#52647a;font-size:.9rem}.disclaimer strong{color:#243c59}.sources{padding-left:20px;color:#52647a}.sources li{margin:8px 0}.site-footer{padding:28px 20px;background:#10233e;color:#dce7f5;text-align:center;font-size:.9rem}.site-footer a{color:#fff}
+    @media(max-width:850px){.nav-wrap{padding:15px 0;align-items:flex-start;flex-direction:column}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.two-col{grid-template-columns:1fr}.process{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:560px){.container,.nav-wrap{width:calc(100% - 30px)}.hero{padding:54px 0 45px}.section{padding:44px 0}.grid,.framework-list,.process{grid-template-columns:1fr}.card{padding:20px}.cta{padding:26px 22px}.nav-links{gap:8px 14px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"ZF Consulting Services","url":"https://www.zfconsulting.com.au/","areaServed":{"@type":"Country","name":"Australia"},"serviceType":["AI security testing","AI governance readiness","AI risk assessment","Application security testing"],"description":"Technical AI security testing and governance readiness support for Australian organisations."}
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">Z</span>ZF CONSULTING SERVICES</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="cyber-security.html">Cyber Security</a>
+      <a href="ai-automation.html">AI Automation</a>
+      <a href="software-testing.html">Software Testing</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">ZF Consulting Services · Australia</p>
+      <h1>AI Security &amp; Governance</h1>
+      <p class="lead">Build confidence in AI systems with practical security testing, risk reviews and governance readiness support. We help Australian organisations understand how their AI applications behave, where risks may arise and what to improve.</p>
+      <div class="hero-actions">
+        <a class="btn" href="contact.html">Discuss an AI security assessment</a>
+        <a class="btn btn-secondary" href="#approach">Explore our approach</a>
+      </div>
+      <div class="status-note"><strong>Regulatory status:</strong> On 10 November 2026, the Australian Government announced its intention to legislate mandatory safety and security protections for frontier AI companies through proposed AI Standards legislation. The detailed legislation and requirements are still being developed. The announced obligations should not be described as law currently in force.</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow">Why AI assurance matters</p>
+        <h2>AI creates new opportunities and new security questions</h2>
+        <p class="section-intro">AI applications can process sensitive information, connect to business systems and influence decisions. Organisations need to understand the system's purpose, data, permissions, limitations and failure modes before and after deployment.</p>
+        <ul class="checklist">
+          <li>Understand what information an AI system can access or reveal.</li>
+          <li>Test how it responds to prompt injection and malicious inputs.</li>
+          <li>Review identity, access controls and connected tools.</li>
+          <li>Consider privacy, human oversight and escalation processes.</li>
+          <li>Document findings, residual risks and recommended improvements.</li>
+        </ul>
+      </div>
+      <aside class="callout">
+        <h3>Who we support</h3>
+        <p>Australian businesses, technology teams and organisations developing, integrating or adopting AI-enabled applications that want clearer technical evidence and practical risk-reduction steps.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Our services</p>
+        <h2>Practical AI security and governance support</h2>
+        <p class="section-intro">Engagements are scoped to the AI system, business context and authorisation provided. We focus on technical assessment and actionable recommendations.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><span class="number">01</span><h3>AI application security testing</h3><p>Assess agreed AI workflows for prompt injection, unsafe instruction handling, unintended disclosure and other application-level weaknesses.</p></article>
+        <article class="card"><span class="number">02</span><h3>AI risk and threat assessment</h3><p>Identify relevant threats, trust boundaries, data flows, connected services and potential impacts. Document assumptions and risk treatment options.</p></article>
+        <article class="card"><span class="number">03</span><h3>Data protection and access review</h3><p>Review how an AI application handles inputs, outputs, sensitive information, identity, permissions and access to connected resources.</p></article>
+        <article class="card"><span class="number">04</span><h3>AI evaluation and test automation</h3><p>Design repeatable test scenarios and evaluation checks for expected behaviour, security controls and regression testing.</p></article>
+        <article class="card"><span class="number">05</span><h3>Governance readiness support</h3><p>Help teams organise technical evidence, ownership, risk records, review practices and oversight processes. Legal interpretation remains with qualified advisers.</p></article>
+        <article class="card"><span class="number">06</span><h3>Incident readiness and improvement</h3><p>Review technical escalation paths, evidence capture, response workflows and retesting plans for AI-related security issues.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Australian policy context</p>
+        <h2>Understand the standards landscape</h2>
+        <p class="section-intro">We distinguish current voluntary guidance from announced policy intentions and any future legal obligations. The applicability of requirements depends on the organisation, system and final legislation.</p>
+      </div>
+      <div class="framework-list">
+        <article class="framework"><strong>Proposed frontier AI protections announced 10 November 2026</strong><p>The Australian Government announced its intention to legislate six safety and security obligations for frontier AI companies that wish to operate in Australia. Further details are to be developed. This announcement is not itself enacted legislation.</p></article>
+        <article class="framework"><strong>Guidance for AI Adoption</strong><p>The Department of Industry, Science and Resources publishes guidance describing six essential practices for safe and responsible AI governance and adoption.</p></article>
+        <article class="framework"><strong>Voluntary AI Safety Standard</strong><p>The Australian Government's voluntary standard provides guardrails for organisations across the AI supply chain. It is guidance and does not, by itself, create new legal duties.</p></article>
+        <article class="framework"><strong>Cyber security and privacy obligations</strong><p>Existing privacy, consumer, sector-specific and cyber security requirements may apply depending on the organisation and AI use case. Obtain legal advice for interpretation.</p></article>
+      </div>
+      <ul class="sources">
+        <li><a href="https://www.minister.industry.gov.au/t-ayres/media/new-australian-ai-safety-and-security-protections" target="_blank" rel="noopener noreferrer">Australian Government announcement: New Australian AI safety and security protections (10 November 2026)</a></li>
+        <li><a href="https://www.industry.gov.au/publications/voluntary-ai-safety-standard" target="_blank" rel="noopener noreferrer">Department of Industry: Voluntary AI Safety Standard and Guidance for AI Adoption</a></li>
+        <li><a href="https://www.industry.gov.au/publications/voluntary-ai-safety-standard/10-guardrails" target="_blank" rel="noopener noreferrer">Voluntary AI Safety Standard: the 10 guardrails</a></li>
+        <li><a href="https://www.cyber.gov.au/publication/careful-adoption-of-agentic-ai-services" target="_blank" rel="noopener noreferrer">Australian Cyber Security Centre: Careful adoption of agentic AI services</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section alt" id="approach">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">How we work</p>
+        <h2>A clear, evidence-led assessment process</h2>
+        <p class="section-intro">The scope, test boundaries and deliverables are agreed before any active testing begins.</p>
+      </div>
+      <div class="process">
+        <article class="step"><b>STEP 01</b><h3>Discover</h3><p>Understand the AI use case, system boundaries, data sensitivity and business objectives.</p></article>
+        <article class="step"><b>STEP 02</b><h3>Scope and authorise</h3><p>Confirm ownership, written permission, test accounts, permitted techniques and exclusions.</p></article>
+        <article class="step"><b>STEP 03</b><h3>Assess and document</h3><p>Run agreed checks, preserve evidence safely and explain validated findings with risk context.</p></article>
+        <article class="step"><b>STEP 04</b><h3>Recommend and retest</h3><p>Provide practical remediation advice and, where agreed, retest changes to assess the outcome.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div>
+        <p class="eyebrow">Technical portfolio</p>
+        <h2>AI security testing in practice</h2>
+        <p class="section-intro">ZF Consulting has developed a Playwright and TypeScript AI security testing framework with 19 portfolio test cases across prompt injection, jailbreak and data leakage scenarios. The framework demonstrates testing capability; it is not a certification or proof that any third-party AI system is secure.</p>
+        <div class="hero-actions">
+          <a class="btn" href="https://github.com/ZF-Consulting-Services/Playwrite-demo" target="_blank" rel="noopener noreferrer">View GitHub portfolio</a>
+          <a class="btn btn-secondary" href="cyber-security.html">Explore cyber security services</a>
+        </div>
+      </div>
+      <aside class="callout">
+        <h3>What clients receive</h3>
+        <ul class="checklist">
+          <li>Agreed assessment scope and test objectives</li>
+          <li>Documented test scenarios and observations</li>
+          <li>Prioritised findings with supporting evidence</li>
+          <li>Practical remediation recommendations</li>
+          <li>Optional retesting and closure summary</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta">
+        <p class="eyebrow" style="color:#c7dcff">Start a conversation</p>
+        <h2>Make your AI security posture easier to understand</h2>
+        <p>Talk to ZF Consulting Services about an AI application security review, technical risk assessment or governance readiness engagement.</p>
+        <a class="btn" href="contact.html">Contact ZF Consulting Services</a>
+      </div>
+      <p class="disclaimer"><strong>Important information:</strong> ZF Consulting Services provides technical assessment and readiness support. We are not an Australian Government regulator, accredited conformity assessment body or legal adviser. We do not issue government certification or guarantee compliance. The proposed frontier AI protections announced on 10 November 2026 are subject to the Government's legislative development process. Organisations should check current official guidance and obtain independent legal advice about their obligations.</p>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <p>© 2026 ZF Consulting Services. Brisbane, Queensland, Australia.</p>
+  <p><a href="index.html">Home</a> · <a href="cyber-security.html">Cyber Security</a> · <a href="privacy.html">Privacy</a> · <a href="contact.html">Contact</a></p>
+</footer>
+</body>
+</html>
