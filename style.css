@@ -331,3 +331,86 @@ footer {
     background: #050505;
     color: #9cff57;
 }
+
+/* Canonical navigation shared by every public page. */
+body > header.site-header {
+    box-sizing: border-box !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 16px 24px !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 78px !important;
+    margin: 0 !important;
+    padding: 20px 8% !important;
+    position: relative !important;
+    z-index: 20 !important;
+    border-bottom: 1px solid rgba(120, 184, 255, .2) !important;
+    background: rgba(4, 10, 18, .9) !important;
+    backdrop-filter: blur(4px);
+}
+
+body > header.site-header .site-brand {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0 !important;
+    color: #ffffff !important;
+    font-size: 1.15rem !important;
+    font-weight: 700 !important;
+    letter-spacing: .04em !important;
+    line-height: 1 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+}
+
+body > header.site-header .brand-z {
+    display: block !important;
+    width: 2.2em !important;
+    height: 1.8em !important;
+    margin: 0 !important;
+    background: none !important;
+    mask: none !important;
+    object-fit: contain !important;
+}
+
+body > header.site-header .site-nav {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 12px 20px !important;
+    max-width: 100% !important;
+    line-height: 1.5 !important;
+}
+
+body > header.site-header .site-nav a,
+body > header.site-header .site-nav a:visited {
+    color: #e5f7ff !important;
+    font-size: .92rem !important;
+    font-weight: 400 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+}
+
+body > header.site-header .site-nav a:hover,
+body > header.site-header .site-nav a:focus-visible {
+    color: #78b8ff !important;
+}
+
+@media (max-width: 760px) {
+    body > header.site-header {
+        align-items: flex-start !important;
+        min-height: 0 !important;
+        padding: 18px 5% !important;
+    }
+
+    body > header.site-header .site-nav {
+        gap: 9px 14px !important;
+    }
+
+    body > header.site-header .site-nav a,
+    body > header.site-header .site-nav a:visited {
+        font-size: .86rem !important;
+    }
+}
