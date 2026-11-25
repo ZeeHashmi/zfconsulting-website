@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="theme-color" content="#101713">
+  <title>ZF Visitor Intelligence</title>
+  <link rel="stylesheet" href="zf-visitor-dashboard.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="login-view" data-login-view aria-labelledby="login-title">
+      <div class="login-brand"><span class="brand-mark" aria-hidden="true">ZF</span><span>Visitor Intelligence</span></div>
+      <div class="login-copy">
+        <p class="eyebrow">Private analytics</p>
+        <h1 id="login-title">Understand demand.<br>Respect privacy.</h1>
+        <p>Aggregate website trends for ZF Consulting service and pricing pages, without presenting an IP address as a person.</p>
+      </div>
+      <form class="login-form" data-login-form>
+        <div class="form-heading"><h2>Administrator sign in</h2><p>Access is restricted to approved Supabase users.</p></div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="username" required>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+        <p class="form-error" data-login-error role="alert" hidden></p>
+        <button class="primary-button" type="submit" data-login-button>Sign in</button>
+      </form>
+      <p class="login-note">Aggregate data only. Event-level records and identifiers are not available in this dashboard.</p>
+    </section>
+
+    <section class="dashboard-view" data-dashboard-view hidden>
+      <header class="dashboard-header">
+        <a class="dashboard-brand" href="index.html" aria-label="ZF Consulting website"><span class="brand-mark" aria-hidden="true">ZF</span><span><strong>Visitor Intelligence</strong><small>Private workspace</small></span></a>
+        <div class="header-actions"><span class="connection-status" data-status><span></span>Ready</span><button class="ghost-button" type="button" data-refresh>Refresh</button><button class="icon-button" type="button" data-logout aria-label="Sign out" title="Sign out">↗</button></div>
+      </header>
+
+      <div class="dashboard-content">
+        <div class="page-heading">
+          <div><p class="eyebrow">Website interest</p><h1>Traffic overview</h1><p data-period-label>Loading report period...</p></div>
+          <label class="range-control">Date range<select data-range><option value="7">Last 7 days</option><option value="30" selected>Last 30 days</option><option value="90">Last 90 days</option></select></label>
+        </div>
+
+        <p class="dashboard-error" data-dashboard-error role="alert" hidden></p>
+        <div class="loading-state" data-loading>Loading private analytics...</div>
+
+        <div data-dashboard-content hidden>
+          <section class="metric-grid" aria-label="Summary metrics">
+            <article class="metric"><span>Page views</span><strong data-metric="page_views">0</strong><small>Across tracked pages</small></article>
+            <article class="metric"><span>Anonymous sessions</span><strong data-metric="anonymous_sessions">0</strong><small>Pseudonymous browser tabs</small></article>
+            <article class="metric accent"><span>Interest actions</span><strong data-metric="interest_actions">0</strong><small>Email, phone, pricing or contact</small></article>
+            <article class="metric"><span>Session interest rate</span><strong data-metric="interest_rate">0%</strong><small>Interested sessions / sessions</small></article>
+          </section>
+
+          <section class="trend-section">
+            <div class="section-heading"><div><p class="eyebrow">Daily trend</p><h2>Traffic and intent</h2></div><div class="legend"><span><i class="views"></i>Page views</span><span><i class="interest"></i>Interest actions</span></div></div>
+            <div class="trend-chart" data-trend-chart aria-label="Daily traffic chart"></div>
+          </section>
+
+          <section class="dashboard-grid">
+            <article class="data-panel pages-panel"><div class="panel-heading"><div><p class="eyebrow">Demand</p><h2>Page performance</h2></div></div><div class="table-wrap"><table><thead><tr><th>Page</th><th>Views</th><th>Sessions</th><th>Actions</th><th>Rate</th></tr></thead><tbody data-pages></tbody></table></div></article>
+            <article class="data-panel"><div class="panel-heading"><div><p class="eyebrow">Origin</p><h2>Traffic sources</h2></div></div><div class="rank-list" data-sources></div></article>
+            <article class="data-panel"><div class="panel-heading"><div><p class="eyebrow">Action mix</p><h2>Interest signals</h2></div></div><div class="signal-list" data-signals></div></article>
+            <article class="data-panel"><div class="panel-heading"><div><p class="eyebrow">Reach</p><h2>Country trends</h2></div></div><div class="rank-list" data-countries></div></article>
+          </section>
+
+          <footer class="privacy-note"><strong>Interpretation note:</strong> “sessions” are anonymous browser-session hashes. They are not verified people, organisations or buying entities. Use trends to guide page improvement and outreach, not to make identity claims.</footer>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="supabase-demo-config.js"></script>
+  <script src="zf-visitor-dashboard.js"></script>
+</body>
+</html>

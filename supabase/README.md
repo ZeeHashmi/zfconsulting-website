@@ -33,6 +33,42 @@ allows only `http://localhost:8004` and `http://127.0.0.1:8004`. Do not use
 development credentials in production or production credentials for local
 testing.
 
+## ZF Visitor Intelligence
+
+Run `migrations/20261125000000_zf_visitor_intelligence.sql`, set the private
+`VISITOR_INTELLIGENCE_SECRET` Edge Function secret to a random value of at
+least 32 characters, then deploy `zf-visitor-intelligence`. `RATE_LIMIT_SECRET`
+is accepted as a fallback but a separate secret is preferred. The function is
+configured as public (`verify_jwt = false`) so the static website can submit
+strictly validated analytics events, while the underlying tables, functions and
+reporting views remain inaccessible to `anon` and `authenticated` roles.
+
+Run `migrations/20261125010000_zf_visitor_dashboard.sql` after the event
+migration. In Supabase Authentication, create the administrator account with
+email/password sign-in enabled. Copy that account's UUID from the Users table
+and authorize it in the SQL editor:
+
+```sql
+insert into public.zf_visitor_admins (user_id)
+values ('REPLACE_WITH_ADMIN_USER_UUID')
+on conflict do nothing;
+```
+
+The private dashboard is `visitor-intelligence.html`. It uses Supabase
+Authentication and an aggregate-only RPC; it does not expose event rows,
+session hashes, rate-limit hashes or a service-role key. The authenticated RPC
+rejects any user not present in `zf_visitor_admins`. Keep the dashboard URL
+unlinked from public navigation and prevent search indexing at the host level
+if an additional indexing control is available.
+
+Query the private aggregate views from the Supabase SQL editor or an
+admin server-side tool: `zf_visitor_daily_overview`, `zf_visitor_page_interest`,
+`zf_visitor_traffic_sources` and `zf_visitor_country_trends`. Do not grant
+browser roles access to raw event or rate-limit tables. Event records are
+deleted after 90 days during subsequent accepted writes; rate-limit hashes are
+removed after 15 minutes. No raw IP address, email address, chat content or form
+content is stored.
+
 The function uses OpenAI's `gpt-4o-mini` by default; set `OPENAI_MODEL` as an
 Edge Function secret to select another compatible model.
 
